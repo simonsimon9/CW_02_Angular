@@ -13,8 +13,9 @@ template: `
     `
   })
 export class AppComponent {
-
+  storeSession: any = sessionStorage.setItem('your_key', 'simon_key');
 constructor(){
 
 }
+
 }

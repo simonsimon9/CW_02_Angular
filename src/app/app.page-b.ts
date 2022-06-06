@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-@Component({
-template: `ID: {{id}}<br/>
-           Name: {{firstName}}`
-})
-export class PageBComponent { 
-    id!:number;
-    firstName!: string;
+    @Component({
+        template: `This is page b. {{retrievedFromStorage}}
+        <input type="input" (ngModelChange)="mychange($event)" [ngModel]="mymodel">
+        `
+    })
+    export class PageBComponent {
+        //for interpolation
+        //requires the types, needed null because string has no null value. this sets type of null or string
+        retrievedFromStorage : string | null = sessionStorage.getItem('autosave'); 
+         //property binding to ngModel
+        mymodel:any = "hey";
+        constructor() {
+        }
 
+        //event binding
+        mychange(val:string) {
+            sessionStorage.setItem("autosave", val);
+            console.log(sessionStorage.getItem("autosave")); // updated value in the storage
+            console.log(val); //value 
 
-    constructor(private route: ActivatedRoute){
-        let str = "This is where the class is initalized"
-    }
-
-    ngOnInit(){
-        this.route.params.forEach((params:Params)=>{
-            let localID = params['id'];
-            let localName = params['firstname'];
-            this.id = localID;
-            this.firstName = localName;
-        })
-    }
+            // uncomment below code and retrievedFromStorage will change in the html as well 
+            //this.retrievedFromStorage = sessionStorage.getItem('autosave');
+        }
 }
