@@ -22,13 +22,16 @@ template: `<!-- Sep 17, 2019 -->
         <br>
 
         {{price | currency:'USD':true}}<br/>
+
+        <p>{{celsius | fahrenheitPipe}}</p>
     `
   })
 export class AppComponent {
 // Months start counting at 0.
 mydate = new Date(2019, 8, 17, 18, 0, 30);
 price: number = 23.23333;
+celsius:number;
 constructor(){
-  
+  this.celsius = 33;
 }
 }

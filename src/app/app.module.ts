@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FahrenheitPipe } from './app.fahrenheitPipe';
 import { SecondDirective } from './secondDirective';
 import { ThirdDirective } from './thirdDirective';
 
@@ -9,7 +10,8 @@ import { ThirdDirective } from './thirdDirective';
   declarations: [
     AppComponent,
     SecondDirective,
-    ThirdDirective
+    ThirdDirective,
+    FahrenheitPipe
   ],
   imports: [
     BrowserModule
