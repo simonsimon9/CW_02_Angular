@@ -4,8 +4,8 @@ selector: 'app-root',
 template: `
       <h1>This is the header</h1>
       <nav>
-        <a routerLink="/page-a" routerLinkActive="active">A</a>
-        <a routerLink="/page-b" routerLinkActive="active">B</a>
+        <a routerLink="/page-a" routerLinkActive="active">A</a> 
+        <a routerLink="/page-b/5/bob" routerLinkActive="active">B</a>
 
       </nav>
       <!--Where router should display a view-->
