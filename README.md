@@ -3,7 +3,10 @@ Concepts covered:
 2. Services (requires constructor to create for each directive)
 3. Pipes and custom pipes
 4. Basic Routing
-5. Data binding (Event binding and Property binding) using ngModel 
+5. Data binding (Interpolation, Event binding, Property binding) using ngModel 
+   a. {{expression}} 
+   b. [target] = "expression"
+   c. (target) = "statement"
 
 # Myapp
 
