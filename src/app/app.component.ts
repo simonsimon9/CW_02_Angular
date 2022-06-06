@@ -18,9 +18,17 @@ template: `<!-- Sep 17, 2019 -->
 
         <!-- Tuesday, September 17, 2019 6:00PM -->
         <p>{{mydate | date: 'EEEE, MMMM d, y, h:mma'}}</p>
+
+        <br>
+
+        {{price | currency:'USD':true}}<br/>
     `
   })
 export class AppComponent {
 // Months start counting at 0.
 mydate = new Date(2019, 8, 17, 18, 0, 30);
+price: number = 23.23333;
+constructor(){
+  
+}
 }
