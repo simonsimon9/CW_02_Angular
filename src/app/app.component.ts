@@ -23,7 +23,9 @@ template: `<!-- Sep 17, 2019 -->
 
         {{price | currency:'USD':true}}<br/>
 
-        <p>{{celsius | fahrenheitPipe}}</p>
+        <p>{{celsius | fahrenheitPipe}}</p> <br/>
+
+        <p> {{phone | phonenumberPipe}}
     `
   })
 export class AppComponent {
@@ -31,7 +33,9 @@ export class AppComponent {
 mydate = new Date(2019, 8, 17, 18, 0, 30);
 price: number = 23.23333;
 celsius:number;
+phone:number;
 constructor(){
   this.celsius = 33;
+  this.phone=3133181111;
 }
 }

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FahrenheitPipe } from './app.fahrenheitPipe';
+import { PhoneNumberPipe } from './app.phonePipe';
 import { SecondDirective } from './secondDirective';
 import { ThirdDirective } from './thirdDirective';
 
@@ -11,7 +12,8 @@ import { ThirdDirective } from './thirdDirective';
     AppComponent,
     SecondDirective,
     ThirdDirective,
-    FahrenheitPipe
+    FahrenheitPipe,
+    PhoneNumberPipe
   ],
   imports: [
     BrowserModule
