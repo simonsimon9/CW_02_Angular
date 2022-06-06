@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { ConversionCtoF} from './ConversionCtoFService';
-
-import { MyDataService } from './myDataService';
-
 @Component({
-    selector: 'app-root',
-    template: `<h1>Hello world! {{title}}</h1>
-    <ul>{{f}}</ul>`,
-    // 'providers' allows you to create and pass an instance
-    // of the class to the constructor header.
-    providers: [MyDataService , ConversionCtoF ]
-})
+selector: 'app-root',
+template: `<!-- Sep 17, 2019 -->
+        {{ mydate | date }}<br>
+        <!-- Sep 17, 2019 -->
+        <p>{{ mydate | date: 'y MMMM d' }}<br>
+        <!-- Sep 17, 2019 -->
+        <p>{{ mydate | date: 'mediumDate' }}<br>
+        <!-- Tuesday, Sep 17, 2019 -->
+        <p>{{ mydate | date: 'fullDate' }}<br>
+        <!-- 6:00 PM -->
+        <p>{{ mydate | date: 'shortTime' }}<br>
+        <!-- TUESDAY, Sep 17, 2019 -->
+        <p>{{ mydate | date:'fullDate' | uppercase}}</p>
+        <!-- Sep 17, 2019 6:00PM -->
+        <p>{{ mydate | date:'MMMM d, y h:mma' }}</p>
+
+        <!-- Tuesday, September 17, 2019 6:00PM -->
+        <p>{{mydate | date: 'EEEE, MMMM d, y, h:mma'}}</p>
+    `
+  })
 export class AppComponent {
-    public title = 'This is Angular!';
-    f: number;
-    //Create instance of 'ConversionService' right in the constructor
-    //header.
-    constructor(conversionCtoF: ConversionCtoF){
-      this.f = conversionCtoF.getConversion();
-    }
-   
-    
+// Months start counting at 0.
+mydate = new Date(2019, 8, 17, 18, 0, 30);
 }
